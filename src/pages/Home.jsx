@@ -3,63 +3,74 @@ import '../styles/Home.css'
 const Home = () => {
   return (
     <div className="home">
+      {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1>HackHerVerse</h1>
+          <h1 className="hero-title">
+            Hack<span className="her-verse">Her</span>Verse
+          </h1>
           <p className="tagline">Code with summertime sadness</p>
-          <p className="date">March 15-16, 2024</p>
+          <p className="date">May 03-04, 2025</p>
           <a href="#register" className="cta-button">Enter Paradise</a>
         </div>
       </section>
 
-      <section className="features">
-        <div className="feature-card">
-          <h3>$5000 in Prizes</h3>
-          <p>Money is the reason we exist</p>
+      {/* About Section */}
+      <section className="about" id="about">
+        <h2>About the Hackathon</h2>
+        <p>HackHerVerse is a premier hackathon bringing together the brightest minds to innovate, collaborate, and create revolutionary solutions.</p>
+      </section>
+
+      {/* Prizes Section */}
+      <section className="prizes" id="prizes">
+        <h2>Prizes</h2>
+        <p>Compete for a chance to win from a $20,000 prize pool.</p>
+      </section>
+
+      {/* Tracks Section */}
+      <section className="tracks" id="tracks">
+        <h2>Tracks</h2>
+        <ul>
+          <li>AI & Machine Learning</li>
+          <li>Web & Mobile Development</li>
+          <li>Blockchain & Web3</li>
+          <li>Healthcare & Biotech</li>
+          <li>Cybersecurity</li>
+        </ul>
+      </section>
+
+      {/* Judges & Mentors Section */}
+      <section className="judges" id="judges">
+        <h2>Judges & Mentors</h2>
+        <p>Industry leaders and experts will guide and evaluate your projects.</p>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="faq" id="faq">
+        <h2>FAQ</h2>
+        <div className="question">
+          <h4>Who can participate?</h4>
+          <p>Anyone passionate about technology! Beginners and experts alike.</p>
         </div>
-        <div className="feature-card">
-          <h3>Workshops</h3>
-          <p>Born to code, built to last</p>
-        </div>
-        <div className="feature-card">
-          <h3>Networking</h3>
-          <p>Connect with fellow hackers in paradise</p>
+        <div className="question">
+          <h4>Do I need a team?</h4>
+          <p>No, you can join solo or form a team during the event.</p>
         </div>
       </section>
 
-      <section className="schedule" id="register">
-        <h2>Weekend Schedule</h2>
-        <div className="timeline">
-          <div className="event">
-            <span className="time">6:00 PM</span>
-            <h4>Opening Ceremony</h4>
-            <p>Friday, March 15</p>
-          </div>
-          <div className="event">
-            <span className="time">7:00 PM</span>
-            <h4>Hacking Begins</h4>
-            <p>Friday, March 15</p>
-          </div>
-          <div className="event">
-            <span className="time">7:00 PM</span>
-            <h4>Project Submissions</h4>
-            <p>Saturday, March 16</p>
-          </div>
-        </div>
+      {/* Sponsors Section */}
+      <section className="sponsors" id="sponsors">
+        <h2>Our Sponsors</h2>
+        <p>Made possible by the generous support of our sponsors.</p>
       </section>
 
-      <section className="register-section">
-        <div className="register-content">
-          <h2>Join the Paradise</h2>
-          <p>24 hours of coding, creativity, and melancholy</p>
-          <form className="register-form">
-            <input type="text" placeholder="Name" required />
-            <input type="email" placeholder="Email" required />
-            <button type="submit">Register Now</button>
-          </form>
-        </div>
+      {/* Registration Section */}
+      <section className="register" id="register">
+        <h2>Register Now</h2>
+        <a href="#" className="cta-button">Sign Up</a>
       </section>
 
+      {/* Footer */}
       <footer>
         <p>Born to hack, programmed to die</p>
       </footer>
@@ -67,4 +78,4 @@ const Home = () => {
   )
 }
 
-export default Home 
+export default Home;

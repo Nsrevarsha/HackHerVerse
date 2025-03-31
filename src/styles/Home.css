@@ -1,17 +1,58 @@
 .home {
-  padding-top: 80px; /* Account for fixed navbar */
+  padding-top: 60px; /* Reduced from 80px */
 }
 
 .hero {
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   background: var(--creamy-ivory);
-  padding: 2rem;
+  padding: 2rem 2rem 4rem; /* Adjusted padding to push content up */
   position: relative;
   overflow: hidden;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: min(1000px, 95%);
+  padding: clamp(2rem, 8vw, 5rem); /* Reduced top padding */
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+  color: var(--color-accent);
+  font-size: clamp(4rem, 18vw, 7rem);
+  margin-bottom: calc(var(--spacing-unit) * 3);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  position: relative;
+  display: block;
+  font-family: var(--font-primary);
+  text-shadow: 3px 3px 6px rgba(123, 42, 59, 0.25);
+}
+
+.tagline {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 2.5rem;
+}
+
+.date {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  margin-bottom: 2.5rem;  /* Reduced from 5rem to 2.5rem */
+}
+
+.cta-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2em 3em;
+  margin: 1rem auto 0;  /* Reduced top margin from 2rem to 1rem */
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
 }
 
 .hero::before {
@@ -24,228 +65,87 @@
   background: 
     linear-gradient(45deg, var(--maroon), transparent 70%),
     linear-gradient(-45deg, var(--maroon), transparent 70%);
-  opacity: 0.05;
+  opacity: 0.08;
+  animation: gradientFlow 15s ease-in-out infinite;
 }
 
 .hero-content {
+  width: 100%;
   max-width: min(800px, 90%);
   padding: clamp(2rem, 5vw, 4rem);
   position: relative;
   z-index: 1;
-  border: 1px solid var(--maroon);
-  background: rgba(85, 0, 0, 0.02);
+  animation: fadeInUp 1s ease-out;
 }
 
-.hero h1 {
-  font-size: clamp(2.5rem, 8vw, 6rem);
-  margin-bottom: 1.5rem;
-  letter-spacing: clamp(6px, 1.5vw, 12px);
-  text-transform: uppercase;
-  line-height: 1.2;
-  color: var(--maroon);
-  text-shadow: 2px 2px 4px var(--maroon-shadow);
-}
-
-.tagline {
-  font-style: italic;
-  color: var(--maroon);
-  font-size: clamp(1.2rem, 3vw, 2rem);
-  margin-bottom: 2rem;
-  letter-spacing: clamp(2px, 0.5vw, 4px);
-  font-weight: 300;
-  opacity: 0.9;
-}
-
-.date {
-  color: var(--maroon);
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  margin-bottom: 4rem;
-  letter-spacing: clamp(2px, 0.4vw, 3px);
-  opacity: 0.8;
-}
-
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: clamp(2rem, 4vw, 4rem);
-  padding: clamp(4rem, 8vw, 10rem) clamp(1rem, 4vw, 6rem);
-  background: linear-gradient(
-    to bottom,
-    var(--creamy-ivory),
-    rgba(85, 0, 0, 0.05) 50%,
-    var(--creamy-ivory)
-  );
-}
-
-.feature-card {
-  text-align: center;
-  padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 2vw, 2rem);
+.hero-title {
+  color: var(--color-accent);
+  font-size: clamp(3.5rem, 15vw, 5.5rem);
+  margin-bottom: calc(var(--spacing-unit) * 2);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
   position: relative;
-  border: 1px solid var(--maroon);
-  background: rgba(85, 0, 0, 0.02);
-  transition: all 0.3s ease;
-}
-
-.feature-card:hover {
-  background: rgba(85, 0, 0, 0.05);
-  transform: translateY(-5px);
-}
-
-.feature-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 1px;
-  background: var(--maroon);
-  opacity: 0.3;
-}
-
-.feature-card h3 {
-  color: var(--maroon);
-  font-size: clamp(1.8rem, 3vw, 2.2rem);
-  margin-bottom: 1.5rem;
-  letter-spacing: clamp(2px, 0.4vw, 3px);
-}
-
-.feature-card p {
-  color: var(--maroon);
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  line-height: 1.8;
-  font-style: italic;
-  opacity: 0.8;
-}
-
-.schedule {
-  text-align: center;
-  padding: clamp(4rem, 8vw, 10rem) clamp(1rem, 4vw, 2rem);
-  background: var(--creamy-ivory);
-  position: relative;
-}
-
-.schedule::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
-  background: linear-gradient(to bottom, rgba(85, 0, 0, 0.05), transparent);
-}
-
-.schedule h2 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  margin-bottom: clamp(3rem, 6vw, 6rem);
-  letter-spacing: clamp(4px, 0.8vw, 6px);
-  color: var(--maroon);
-}
-
-.timeline {
-  max-width: min(800px, 90%);
-  margin: 0 auto;
-  position: relative;
-  display: grid;
-  gap: clamp(2rem, 4vw, 4rem);
-}
-
-.event {
-  text-align: left;
-  padding: clamp(1.5rem, 3vw, 2rem);
-  position: relative;
-  border-left: 1px solid var(--maroon);
-  margin-left: clamp(1rem, 2vw, 2rem);
-  background: rgba(85, 0, 0, 0.02);
-}
-
-.time {
-  color: var(--maroon);
-  font-size: clamp(1.2rem, 2vw, 1.4rem);
-  margin-bottom: 0.5rem;
   display: block;
-  letter-spacing: 2px;
-  opacity: 0.9;
+  font-family: var(--font-primary);
+  text-shadow: 2px 2px 4px rgba(123, 42, 59, 0.2);
 }
 
-.event h4 {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
-  margin-bottom: 1rem;
-  color: var(--maroon);
-  letter-spacing: 2px;
-}
-
-.event p {
-  color: var(--maroon);
+.her-verse {
+  color: var(--color-accent);
   font-style: italic;
-  opacity: 0.8;
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
-}
-
-.register-section {
-  text-align: center;
-  padding: clamp(4rem, 8vw, 10rem) clamp(1rem, 4vw, 2rem);
-  background: linear-gradient(
-    to bottom,
-    var(--creamy-ivory),
-    rgba(85, 0, 0, 0.05)
-  );
   position: relative;
+  display: inline-block;
+  transform: rotate(-5deg) translateY(0.05em);
+  padding: 0 0.2em;
+  transition: var(--transition);
 }
 
-.register-content {
-  max-width: min(600px, 90%);
-  margin: 0 auto;
-  padding: clamp(2rem, 4vw, 4rem);
-  border: 1px solid var(--maroon);
-  background: rgba(85, 0, 0, 0.02);
+.her-verse:hover {
+  transform: rotate(-8deg) translateY(0.05em) scale(1.05);
 }
 
-.register-content h2 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  margin-bottom: clamp(1.5rem, 3vw, 2rem);
-  letter-spacing: clamp(4px, 0.8vw, 6px);
-  color: var(--maroon);
-}
-
-.register-content p {
-  font-size: clamp(1.2rem, 2vw, 1.4rem);
-  margin-bottom: clamp(2rem, 4vw, 4rem);
-  color: var(--maroon);
-  font-style: italic;
-  letter-spacing: 2px;
-  opacity: 0.9;
-}
-
-.register-form {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1.5rem, 3vw, 2rem);
-  width: 100%;
-}
-
-.register-form input {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--maroon);
-  padding: 1rem 0;
-  color: var(--maroon);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.1rem, 1.5vw, 1.2rem);
+.cta-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 2.5em;
+  margin: 2rem auto 0;
+  background: var(--color-accent);
+  color: var(--creamy-ivory);
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: var(--font-secondary);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
   letter-spacing: 1px;
-  opacity: 0.9;
-  width: 100%;
+  transition: var(--transition);
+  border: 1px solid var(--color-accent);
 }
 
-.register-form input::placeholder {
-  color: rgba(85, 0, 0, 0.6);
+.cta-button:hover {
+  background: transparent;
+  color: var(--color-accent);
+  transform: translateY(-2px);
 }
 
-.register-form button {
-  margin-top: clamp(1.5rem, 3vw, 2rem);
-  align-self: center;
-  width: min(100%, 300px);
+/* Add new animations */
+@keyframes gradientFlow {
+  0%, 100% { opacity: 0.08; }
+  50% { opacity: 0.12; }
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 
 footer {
   text-align: center;
@@ -286,4 +186,182 @@ footer {
   .feature-card:hover {
     transform: translateY(-5px);
   }
-} 
+}
+
+/* About Section */
+.about {
+  padding: clamp(4rem, 8vw, 10rem) clamp(2rem, 4vw, 6rem);
+  background: linear-gradient(to bottom, var(--creamy-ivory), rgba(123, 42, 59, 0.02));
+  text-align: center;
+}
+
+.about h2 {
+  color: var(--color-accent);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  line-height: 1.8;
+  color: var(--maroon);
+  font-style: italic;
+}
+
+/* Prizes Section */
+.prizes {
+  padding: clamp(4rem, 8vw, 10rem) clamp(2rem, 4vw, 6rem);
+  text-align: center;
+  background: rgba(123, 42, 59, 0.02);
+}
+
+.prizes h2 {
+  color: var(--color-accent);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.prizes p {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  color: var(--maroon);
+  font-style: italic;
+}
+
+/* Tracks Section */
+.tracks {
+  padding: clamp(4rem, 8vw, 10rem) clamp(2rem, 4vw, 6rem);
+  background: var(--creamy-ivory);
+  text-align: center;
+}
+
+.tracks h2 {
+  color: var(--color-accent);
+  margin-bottom: clamp(3rem, 5vw, 4rem);
+}
+
+.tracks ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(2rem, 4vw, 3rem);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tracks li {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--maroon);
+  border-radius: 8px;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  color: var(--maroon);
+  transition: var(--transition);
+}
+
+.tracks li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px var(--maroon-shadow);
+}
+
+/* Judges & Mentors Section */
+.judges {
+  padding: clamp(4rem, 8vw, 10rem) clamp(2rem, 4vw, 6rem);
+  text-align: center;
+  background: linear-gradient(to bottom, var(--creamy-ivory), rgba(123, 42, 59, 0.02));
+}
+
+.judges h2 {
+  color: var(--color-accent);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.judges p {
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  color: var(--maroon);
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* FAQ Section */
+.faq {
+  padding: clamp(4rem, 8vw, 10rem) clamp(2rem, 4vw, 6rem);
+  background: rgba(123, 42, 59, 0.02);
+}
+
+.faq h2 {
+  color: var(--color-accent);
+  text-align: center;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.question {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  border: 1px solid var(--maroon);
+  transition: var(--transition);
+}
+
+.question:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 8px var(--maroon-shadow);
+}
+
+.question h4 {
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+}
+
+.question p {
+  color: var(--maroon);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Sponsors Section */
+.sponsors {
+  padding: clamp(4rem, 8vw, 10rem) clamp(2rem, 4vw, 6rem);
+  text-align: center;
+  background: var(--creamy-ivory);
+}
+
+.sponsors h2 {
+  color: var(--color-accent);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.sponsors p {
+  color: var(--maroon);
+  font-style: italic;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+}
+
+/* Registration Section */
+.register {
+  padding: clamp(4rem, 8vw, 10rem) clamp(2rem, 4vw, 6rem);
+  text-align: center;
+  background: linear-gradient(to bottom, var(--creamy-ivory), rgba(123, 42, 59, 0.05));
+}
+
+.register h2 {
+  color: var(--color-accent);
+  margin-bottom: clamp(3rem, 5vw, 4rem);
+}
+
+/* Keep existing footer styles ... */
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .tracks ul {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  
+  .question {
+    margin: 0 1rem 2rem;
+  }
+}
