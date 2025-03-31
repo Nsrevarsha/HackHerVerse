@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Italiana&display=swap');
+
+:root {
+  --maroon: #550000;
+  --creamy-ivory: #F4E7D6;
+  --maroon-transparent: rgba(85, 0, 0, 0.9);
+  --maroon-light: rgba(85, 0, 0, 0.1);
+  --maroon-shadow: rgba(85, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background-color: var(--creamy-ivory);
+  color: var(--maroon);
+  line-height: 1.6;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+}
+
+.app {
+  min-height: 100vh;
+  background: var(--creamy-ivory);
+}
+
+h1, h2, h3 {
+  font-family: 'Italiana', serif;
+  color: var(--maroon);
+  font-weight: normal;
+  line-height: 1.3;
+  text-shadow: 2px 2px 4px var(--maroon-shadow);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.4s ease;
+}
+
+button, .cta-button {
+  background: transparent;
+  border: 1px solid var(--maroon);
+  color: var(--maroon);
+  padding: 16px 32px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover, .cta-button:hover {
+  background: var(--maroon);
+  transform: translateY(-2px);
+  color: var(--creamy-ivory);
+}
+
+section {
+  padding: 8rem 2rem;
+  position: relative;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--maroon), transparent);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 4rem 1rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+} 
