@@ -17,7 +17,7 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="nav-brand">
-          <Link to="/">HackHer Paradise</Link>
+          <Link to="/">HackHerVerse</Link>
         </div>
         <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
           <span className={`hamburger-line ${isOpen ? 'open' : ''}`}></span>

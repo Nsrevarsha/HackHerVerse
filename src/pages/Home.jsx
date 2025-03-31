@@ -5,7 +5,7 @@ const Home = () => {
     <div className="home">
       <section className="hero">
         <div className="hero-content">
-          <h1>HackHer Paradise</h1>
+          <h1>HackHerVerse</h1>
           <p className="tagline">Code with summertime sadness</p>
           <p className="date">March 15-16, 2024</p>
           <a href="#register" className="cta-button">Enter Paradise</a>
